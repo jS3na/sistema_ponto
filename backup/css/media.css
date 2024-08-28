@@ -1,0 +1,57 @@
+@media screen and (max-width: 760px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        border: none;
+    }
+
+    .menu{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #btt_func{
+        align-items: start
+        ; 
+    }
+
+    #div_credenciais{
+        display:flex;
+        flex-direction: column;
+        margin: 20px;
+        margin-left: 0px;
+        
+    
+    }
+
+    #div_credenciais p{
+        margin: 5px;
+    }
+
+    #filtro{
+        width: 50%;
+        margin: 0px;
+        margin-bottom: 10px;
+        margin-top: -20px;
+    }
+
+    #horast{
+        margin: 20px;
+    }
+
+    input[type=submit].name_verm{
+        background: #5a8bf5;
+        color: #fff;
+        border: 0;
+        cursor: pointer;
+        text-align: center;
+        width: 60%;
+        align-self: center;
+        height: 44px;
+        border-radius: 6px;
+        -webkit-transition: background .3s ease-in-out;
+        transition: background .3s ease-in-out
+    }
+
+}
