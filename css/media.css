@@ -1,0 +1,40 @@
+@media screen and (max-width: 760px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        border: none;
+    }
+
+    .menu{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #btt_func{
+        align-items: start; 
+    }
+
+    #div_credenciais{
+        display:flex;
+        flex-direction: column;
+        margin: 20px;
+        margin-left: 0px;
+    }
+
+    #div_credenciais p{
+        margin: 5px;
+    }
+
+    #filtro{
+        width: 50%;
+        margin: 0px;
+        margin-bottom: 10px;
+        margin-top: -20px;
+    }
+
+    #horast{
+        margin: 20px;
+    }
+
+}
