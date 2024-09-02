@@ -21,7 +21,7 @@
 
                     <?php
                     session_start();
-                    $_SESSION['logado'] = false;
+                    $_SESSION['login'] = false;
 
                     include("./db/config.php");
 
@@ -55,9 +55,8 @@
                                     <p class="infort">CPF incorreto</p>';
                             } else {
                                 $row = $result->fetch_assoc();
-                                $_SESSION['logado'] = true;
+				$_SESSION['login'] = true;
 				$_SESSION['username'] = $row['nome'];
-                                echo $_SESSION['logado'];
 
                                 header("Location: index.php?id=" . $cpf);
                                 exit();

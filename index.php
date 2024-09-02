@@ -1,10 +1,16 @@
 <?php
+
+ob_start();
+
 session_start();
 
-if (!$_SESSION['logado']) {
+if (!isset($_SESSION['login'])) {
     header("Location: https://10.10.86.80/login.php");
     exit();
 }
+
+ob_end_flush();
+
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +36,7 @@ if (!$_SESSION['logado']) {
                     <img id="logogts" src="img/logo_gts.png" />
 
                     <?php
-                    date_default_timezone_set('America/Teresina');
+                    date_default_timezone_set('America/Sao_Paulo');
 
                     $trabalhando = '';
                     $funcionario_id = '';
@@ -105,6 +111,7 @@ if (!$_SESSION['logado']) {
                         if (isset($_POST['iniciar_expediente'])) {
 
                             $horario_entrada_atual = date('H:i:s');
+                            $horario_entrada_atual = date('H:i:s', strtotime($horario_entrada_atual . ' + 3 minutes'));
 
                             if ($horario_entrada_atual > $horario_entrada_limite) {
                                 $_SESSION['atrasado'] = true;
@@ -156,10 +163,9 @@ if (!$_SESSION['logado']) {
                             exit();
                         }
                     } else {
-                        if ($trabalhando == 'fim') {
-                            header("Location: login.php");
-                            exit();
-                        }
+                        header("Location: https://10.10.86.80/login.php");
+    			exit();
+
                     }
                     ?>
 
@@ -187,7 +193,7 @@ if (!$_SESSION['logado']) {
                 <section id="btns-abaixo">
 
                     <form method="post" action="meus_horarios.php?id=<?php echo htmlspecialchars($funcionario_cpf); ?>">
-                        <input class="horarios" type="submit" name="horarios" value="Meus Horários">
+                        <input class="horarios" type="submit" name="horarios" value="Meus Registros">
                     </form>
 
                     <form method="post" action="reportar_bug.php?id=<?php echo htmlspecialchars($funcionario_cpf); ?>">
@@ -196,7 +202,7 @@ if (!$_SESSION['logado']) {
 
                 </section>
 
-                <form method="post">
+                <form method="post" action="index.php?id=<?php echo htmlspecialchars($funcionario_cpf); ?>">
                     <input class="sair_conta" name="sair_conta" type="submit" value="Sair da conta" />
                 </form>
 

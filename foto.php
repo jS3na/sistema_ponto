@@ -18,7 +18,7 @@
 
     include("./db/config.php");
 
-    date_default_timezone_set('America/Fortaleza');
+    date_default_timezone_set('America/Sao_Paulo');
 
     $funcionario_cpf = '';
     $hoje_TOTAL = date('Y-m-d');
@@ -140,6 +140,7 @@
                             <br>
                         </div>
                     </div>
+
                     <video id="video" width="325" height="430" muted autoplay playsinline></video>
                     <input type="submit" id="capture" value="Capturar Foto">
                     <p id="perm_cam"></p>

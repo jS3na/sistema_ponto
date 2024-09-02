@@ -15,7 +15,7 @@ if (isset($_GET['id'])) {
     die('Parâmetro "id" não encontrado.');
 }
 
-if (empty($_SESSION['logado'])) {
+if (empty($_SESSION['login'])) {
     header("Location: ./index.php");
     exit();
 }
@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['reportar'])) {
 <html lang="pt-BR">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <meta http-equiv="pragma" content="no-cache" />
     <meta http-equiv="expires" content="-1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['reportar'])) {
             <div class="wrap animated fadeIn" id="principal">
                 <img id="logogts" src="img/logo_gts.png" />
                 <form action="./reportar_bug.php?id=<?php echo htmlspecialchars($funcionario_cpf); ?>" method="post">
-                    <label for="bug">Detalhe o bug encontrado:</label>
+                    <label for="bug">Descreva o bug encontrado com a maior quantidade de detalhes:</label>
                     <br>
                     <textarea id="bug" name="bug" rows="4" cols="34" required></textarea>
                     <br><br>

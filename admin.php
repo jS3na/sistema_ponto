@@ -51,7 +51,7 @@
 
                     <label>
                         <img class="ico" src="img/password.svg" alt="#" />
-                        <input id="password" name="password" type="text" placeholder="CPF *" />
+                        <input id="password" name="password" type="password" placeholder="CPF *" />
                     </label>
 
                     <input name="admin" id="conectar" type="submit" value="Conectar" />
